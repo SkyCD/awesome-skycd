@@ -1,3 +1,4 @@
 [
-  "https://raw.githubusercontent.com/SkyCD/SkyCD.Plugin.Sample.Config/main/plugins.json"
+  "https://raw.githubusercontent.com/SkyCD/SkyCD.Plugin.Sample.Config/main/plugins.json",
+  "https://raw.githubusercontent.com/SkyCD/SkyCD.Plugin.Sample.Menu/main/plugins.json"
 ]
