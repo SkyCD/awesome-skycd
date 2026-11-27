@@ -28,8 +28,6 @@ Format example only (not a listing):
 
 Publishers own their manifests, NuGet feeds and release history. Once a source is listed, the author ships updates through those resources without changing this directory. The listing changes only when the manifest URL moves or the source is delisted.
 
-The catalog is currently empty while the publishing contract and the first reference plugin are prepared in [issue #2](https://github.com/SkyCD/awesome-skycd/issues/2).
-
 ## Contributing
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) for inclusion criteria, the submission and review process, source moves, removal policy and the contribution checklist. Client behavior, including how a delisted source must be handled, is documented in [docs/APP-INTEGRATION.md](docs/APP-INTEGRATION.md).
