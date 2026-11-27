@@ -1,6 +1,6 @@
 [
   "https://raw.githubusercontent.com/SkyCD/SkyCD.Plugin.Sample.Config/main/plugins.json",
   "https://raw.githubusercontent.com/SkyCD/SkyCD.Plugin.Sample.Menu/main/plugins.json",
-  "https://raw.githubusercontent.com/SkyCD/SkyCD.Plugin.Sample.Modal/main/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Sample.Modal/plugins.json",
   "https://raw.githubusercontent.com/SkyCD/SkyCD.Plugin.Feature.WebBrowser/main/plugins.json"
 ]
