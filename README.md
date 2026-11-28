@@ -13,78 +13,78 @@ SkyCD plugins are distributed by their publishers as NuGet feeds described by a 
 
 ## Feature plugins
 
-Add extra tools and conveniences, such as a built-in web browser.
+Small additions that make the app more pleasant to live in, like a built-in web browser opened from the Tools menu. They do not read files; they add a handy tool or a missing window to the interface.
 
-- [Web Browser](https://github.com/SkyCD/SkyCD.Plugin.Feature.WebBrowser) - Opens a built-in web browser from the Tools menu.
+- [Web Browser](https://github.com/SkyCD/SkyCD.Plugin.Feature.WebBrowser) - Opens a built-in web browser.
 
 
 ## File format plugins
 
-Import and export catalogs and playlists in other programs' formats.
+Open catalogs saved by other disk-cataloguing tools and import their contents. The same plugins read and write playlists, so an existing collection can move in and, where supported, be saved in the format another program expects.
 
-- [abeMeda](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.AbeMeda) - Imports abeMeda, XML, and NeoFinder text catalogs.
-- [Basenji](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Basenji) - Imports Basenji volume databases (.vdb).
-- [Broken X Disk Manager](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.BrokenX) - Opens and saves Broken X Disk Manager databases (.bxd).
-- [Cathy](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Cathy) - Imports Cathy disk catalogs (.caf).
-- [CD Catalog Expert](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.CDCatalogExpert) - Opens and saves CD Catalog Expert 9.x catalogs (.zdc).
-- [CdCat Hyper Catalog](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.CDCat) - Imports CdCat hyper catalogs (.hcf) as read-only.
-- [CDCollect](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.CDCollect) - Opens SQLite 2/3 catalogs and saves in SQLite 3.
-- [CDPlayer.ini](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.CDPlayer) - Imports CDPlayer.ini audio CD databases (read-only).
-- [Disk Explorer Professional](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.DiskExplorer) - Imports Disk Explorer Professional catalogs and reports; saves XML reports.
-- [DiskBase](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.DiskBase) - Imports DiskBase QDR catalogs.
-- [DiskCatalogMaker](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.DiskCatalogMaker) - Imports DiskCatalogMaker v5 catalogs and text exports.
-- [Easy Disk Catalog Maker](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.EasyDiskCatalog) - Imports Easy Disk Catalog Maker 1.7 databases (.edcdb).
-- [GCstar](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.GCstar) - Imports GCstar collection exports.
-- [Katalog](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Katalog) - Imports Katalog CSV/IDX and SQLite collections.
+- [abeMeda](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.AbeMeda) - Imports abeMeda and NeoFinder catalogs.
+- [Basenji](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Basenji) - Imports Basenji databases.
+- [Broken X Disk Manager](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.BrokenX) - Opens and saves Broken X databases.
+- [Cathy](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Cathy) - Imports Cathy catalogs.
+- [CD Catalog Expert](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.CDCatalogExpert) - Opens and saves CD Catalog Expert files.
+- [CdCat Hyper Catalog](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.CDCat) - Imports CdCat catalogs.
+- [CDCollect](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.CDCollect) - Opens and saves CDCollect catalogs.
+- [CDPlayer.ini](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.CDPlayer) - Imports CDPlayer.ini databases.
+- [Disk Explorer Professional](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.DiskExplorer) - Imports Disk Explorer catalogs and reports.
+- [DiskBase](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.DiskBase) - Imports DiskBase catalogs.
+- [DiskCatalogMaker](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.DiskCatalogMaker) - Imports DiskCatalogMaker catalogs.
+- [Easy Disk Catalog Maker](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.EasyDiskCatalog) - Imports Easy Disk Catalog databases.
+- [GCstar](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.GCstar) - Imports GCstar collections.
+- [Katalog](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Katalog) - Imports Katalog collections.
 - [Librer](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Librer) - Imports Librer disk databases.
-- [MyCatalogue](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.MyCatalogue) - Imports MyCatalogue Access databases (.mdb).
-- [Playlists](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Playlist) - Reads and writes M3U, PLS, and XSPF playlists.
-- [Smart CD Catalog PRO](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.SmartCDCatalogPro) - Imports Smart CD Catalog PRO catalogs (.scdc).
-- [TAR Archive Index](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Tar) - Lists TAR archive entries as a catalog hierarchy.
-- [Tellico](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Tellico) - Imports Tellico archives and XML exports.
-- [Virtual Volumes View](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Vvv) - Imports Virtual Volumes View CSV/TSV exports and logical backups.
-- [Where Is It?](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.WhereIsIt) - Imports Where Is It? XML reports.
-- [WinCatalog](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.WinCatalog) - Imports WinCatalog databases and CSV/XML reports.
+- [MyCatalogue](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.MyCatalogue) - Imports MyCatalogue databases.
+- [Playlists](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Playlist) - Reads and writes playlists.
+- [Smart CD Catalog PRO](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.SmartCDCatalogPro) - Imports Smart CD Catalog PRO files.
+- [TAR Archive Index](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Tar) - Lists TAR archive contents.
+- [Tellico](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Tellico) - Imports Tellico collections.
+- [Virtual Volumes View](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Vvv) - Imports Virtual Volumes View exports.
+- [Where Is It?](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.WhereIsIt) - Imports Where Is It? reports.
+- [WinCatalog](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.WinCatalog) - Imports WinCatalog databases.
 
 
 ## Metadata plugins
 
-Show details and previews for the files you catalogue.
+Surface the details stored inside your files, such as tags, titles, authors, durations and dimensions. When a file can be shown, these plugins also draw a preview or thumbnail, so a folder of unknown files is easy to scan.
 
-- [3D Model Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Models3D) - Reads structural metadata and renders thumbnails from 3D model files.
-- [AbiWord Document Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.AbiWord) - Reads document metadata and renders a preview without requiring AbiWord.
-- [Apple iWork Document Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.IWork) - Reads metadata from Pages, Numbers, and Keynote documents.
-- [Archive Contents](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Archives) - Lists archive contents for metadata scanning.
-- [Audio Tags, Cover Art and Audio CDs](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Audio) - Reads audio tags, cover art, and CD details.
-- [Disk Images](https://github.com/SkyCD/SkyCD.Plugin.Metadata.DiskImages) - Lists files inside disk images for scanning.
-- [eBook Metadata and Covers](https://github.com/SkyCD/SkyCD.Plugin.Metadata.EBook) - Reads e-book metadata and extracts covers.
-- [eComic Metadata and Covers](https://github.com/SkyCD/SkyCD.Plugin.Metadata.EComic) - Reads comic metadata and extracts covers.
-- [Email Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Email) - Reads email and mailbox metadata.
-- [Executable File Facts and Icons](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Executable) - Reads executable version details and extracts the program icon.
-- [File Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.FileMetadata) - Reads tags, comments, and ratings from file properties.
-- [Font Metadata and Previews](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Fonts) - Reads font names and renders font previews.
-- [Game Engine Project and Asset Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.GameDev) - Reads project and asset metadata from game engines and tools.
-- [Image Preview and Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Image) - Shows image tags, dimensions, and previews.
-- [Jupyter Notebook Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Notebook) - Reads notebook metadata and titles without executing code.
-- [Microsoft Office Document Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Office) - Reads metadata from Microsoft Office documents without decrypting them.
-- [Microsoft Works Document Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Works) - Reads metadata and renders a text preview from Microsoft Works documents.
-- [OpenOffice Document Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.OpenOffice) - Reads metadata from OpenDocument and OpenOffice documents without decrypting them.
-- [P2P File Hashes](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Hash) - Computes eD2k, Tiger Tree Hash, and SHA-256 hashes.
-- [Sequencer Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Sequencer) - Catalogs DAW projects, MIDI files, and tracker modules.
-- [Video Metadata and Poster Frames](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Video) - Reads video metadata and renders a poster frame.
-- [Video Project Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.VideoProjects) - Reads project metadata from Premiere Pro, After Effects, and DaVinci Resolve.
-- [Volume Serial Number](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Volume) - Captures the filesystem volume serial number when a disk is added.
-- [WordPerfect Document Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.WordPerfect) - Reads document metadata and renders a text preview without decrypting files.
-- [XMP Sidecar Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Xmp) - Reads keywords, description, and rating from XMP sidecar files.
+- [3D Model Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Models3D) - Shows 3D model details and a thumbnail.
+- [AbiWord Document Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.AbiWord) - Reads AbiWord files without AbiWord installed.
+- [Apple iWork Document Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.IWork) - Reads Pages, Numbers and Keynote details.
+- [Archive Contents](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Archives) - Lists what is inside archives.
+- [Audio Tags, Cover Art and Audio CDs](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Audio) - Reads audio tags, cover art and CD details.
+- [Disk Images](https://github.com/SkyCD/SkyCD.Plugin.Metadata.DiskImages) - Lists files inside disk images.
+- [eBook Metadata and Covers](https://github.com/SkyCD/SkyCD.Plugin.Metadata.EBook) - Reads e-book details and covers.
+- [eComic Metadata and Covers](https://github.com/SkyCD/SkyCD.Plugin.Metadata.EComic) - Reads comic details and covers.
+- [Email Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Email) - Reads email and mailbox details.
+- [Executable File Facts and Icons](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Executable) - Reads version info and the program icon.
+- [File Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.FileMetadata) - Reads tags, comments and ratings.
+- [Font Metadata and Previews](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Fonts) - Shows font names and previews.
+- [Game Engine Project and Asset Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.GameDev) - Reads game project and asset details.
+- [Image Preview and Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Image) - Shows dimensions, tags and previews.
+- [Jupyter Notebook Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Notebook) - Reads notebook details without running code.
+- [Microsoft Office Document Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Office) - Reads Office document details.
+- [Microsoft Works Document Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Works) - Reads Works documents and shows text.
+- [OpenOffice Document Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.OpenOffice) - Reads OpenDocument and OpenOffice details.
+- [P2P File Hashes](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Hash) - Computes eD2k, TTH and SHA-256 hashes.
+- [Sequencer Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Sequencer) - Reads music projects and tracker files.
+- [Video Metadata and Poster Frames](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Video) - Reads video details and poster frames.
+- [Video Project Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.VideoProjects) - Reads Premiere, After Effects and Resolve projects.
+- [Volume Serial Number](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Volume) - Records disk volume serial numbers.
+- [WordPerfect Document Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.WordPerfect) - Reads WordPerfect documents and shows text.
+- [XMP Sidecar Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Xmp) - Reads keywords and ratings from XMP files.
 
 
 ## Sample plugins
 
-Reference plugins that demonstrate the plugin API and UI contracts.
+Small reference plugins that show how the plugin API and interface contracts fit together, including an options page, a menu command and a blocking dialog. Read them before writing your own plugin, or copy one as a starting point.
 
-- [Sample Configuration](https://github.com/SkyCD/SkyCD.Plugin.Sample.Config) - Demonstrates an embedded, session-local Options draft page.
-- [Sample Menu](https://github.com/SkyCD/SkyCD.Plugin.Sample.Menu) - Demonstrates a Tools menu command with a notification dialog.
-- [Sample Modal](https://github.com/SkyCD/SkyCD.Plugin.Sample.Modal) - Demonstrates a blocking confirm-export modal with typed contracts.
+- [Sample Configuration](https://github.com/SkyCD/SkyCD.Plugin.Sample.Config) - Shows an embedded options page.
+- [Sample Menu](https://github.com/SkyCD/SkyCD.Plugin.Sample.Menu) - Shows a Tools menu command.
+- [Sample Modal](https://github.com/SkyCD/SkyCD.Plugin.Sample.Modal) - Shows a blocking export dialog.
 
 
 ## How this list works
