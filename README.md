@@ -89,41 +89,22 @@ Reference plugins that demonstrate the plugin API and UI contracts.
 - [Sample Modal](https://github.com/SkyCD/SkyCD.Plugin.Sample.Modal) - Demonstrates a blocking confirm-export modal with typed contracts.
 
 
-## Catalog endpoint
+## How this list works
 
-Each merged change to `catalog.yaml` is published to GitHub Pages as a formatted page and as the machine-readable catalog:
+Every entry links to the publisher who makes the plugin. SkyCD reads that publisher's manifest, shows the plugin in its built-in browser, and installs it from the publisher's own NuGet feed. Nothing is hosted, mirrored or reviewed here, and a listing is not an endorsement of what a plugin does.
+
+Publishers ship updates through their own feed, not through this list. The list changes only when a plugin is added, moves to a new manifest address, or is removed.
+
+## Reading the list from an app
+
+SkyCD and other clients read the same entries as JSON, published alongside this page:
 
 ```text
-https://skycd.github.io/awesome-skycd/
 https://skycd.github.io/awesome-skycd/plugins.json
 ```
 
-The endpoint is public, requires no authentication, and returns a JSON array of unique absolute HTTPS URLs. Each URL points directly at a publisher-owned manifest. The directory stores no package IDs, versions or binaries. An empty array is valid.
-
-Verify it from a clean client:
-
-```bash
-curl -sS https://skycd.github.io/awesome-skycd/plugins.json
-```
-
-Format example only (not a listing):
-
-```json
-[
-  "https://plugins.example.com/skycd/manifest.json"
-]
-```
-
-Publishers own their manifests, NuGet feeds and release history. Once a source is listed, the author ships updates through those resources without changing this directory. The listing changes only when the manifest URL moves or the source is delisted.
+The response is an open, anonymous list of manifest URLs that matches the plugins shown here; an empty list is valid. How a plugin gets listed is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Contributing
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) for inclusion criteria, the submission and review process, source moves, removal policy and the contribution checklist. Delisting affects only this list; it never uninstalls anything from a user's machine.
-
-This page is generated from [`catalog.yaml`](catalog.yaml) by [`.github/workflows/render-catalog.yml`](.github/workflows/render-catalog.yml). On merge, that workflow regenerates the list, renders the HTML page and publishes `plugins.json` to GitHub Pages. Pull-request CI validates the catalog schema and renders the templates without executing plugin code.
-
-## Follow the work
-
-- [SkyCD in-app plugin installation](https://github.com/SkyCD/SkyCD/issues/801)
-- [Directory and contribution rules](https://github.com/SkyCD/awesome-skycd/issues/1)
-- [Publisher guide and reference plugin](https://github.com/SkyCD/awesome-skycd/issues/2)
