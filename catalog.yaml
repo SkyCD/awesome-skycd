@@ -58,6 +58,10 @@ categories:
         description: Reads game project and asset details.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.GameDev
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.GameDev/plugins.json
+      - name: HTML Document Metadata
+        description: Reads page titles, metadata and text previews.
+        project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Html
+        source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Html/plugins.json
       - name: Image Preview and Metadata
         description: Shows dimensions, tags and previews.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Image
