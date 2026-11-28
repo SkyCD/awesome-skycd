@@ -28,10 +28,10 @@ jobs:
           cache: npm
       - name: Install the pinned YAML parser
         run: npm ci --ignore-scripts --no-audit --no-fund
-      - name: Test the catalog validator
+      - name: Run tests
         run: node --test
       - name: Validate catalog.yaml
-        run: node scripts/validate-catalog.mjs catalog.yaml
+        run: node .github/scripts/validate-catalog.mjs catalog.yaml
       - name: Create render output directory
         run: mkdir -p .build
       - name: Render README.md
@@ -51,4 +51,6 @@ jobs:
           output_file: .build/plugins.json
           strict: true
       - name: Validate rendered plugins.json
-        run: node scripts/validate-catalog.mjs .build/plugins.json
+        run: node .github/scripts/validate-catalog.mjs .build/plugins.json
+      - name: Build the catalog page
+        run: node .github/scripts/build-site.mjs .build/README.md .build/index.html

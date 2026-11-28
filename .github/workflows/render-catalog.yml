@@ -6,7 +6,7 @@ on:
     paths:
       - catalog.yaml
       - templates/**
-      - scripts/**
+      - .github/scripts/**
       - package.json
       - package-lock.json
       - README.md
@@ -37,7 +37,7 @@ jobs:
       - name: Install the pinned YAML parser
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Validate catalog.yaml
-        run: node scripts/validate-catalog.mjs catalog.yaml
+        run: node .github/scripts/validate-catalog.mjs catalog.yaml
       - name: Render README.md
         uses: cuchi/jinja2-action@v1.3.0
         with:
@@ -57,7 +57,9 @@ jobs:
           output_file: .build/plugins.json
           strict: true
       - name: Validate rendered plugins.json
-        run: node scripts/validate-catalog.mjs .build/plugins.json
+        run: node .github/scripts/validate-catalog.mjs .build/plugins.json
+      - name: Build the catalog page
+        run: node .github/scripts/build-site.mjs README.md .build/index.html
       - name: Commit rendered README
         run: |
           if git diff --quiet -- README.md; then

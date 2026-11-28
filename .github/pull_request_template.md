@@ -20,5 +20,5 @@
 - [ ] The manifest is publicly readable without authentication and matches the publishing contract.
 - [ ] I can show publisher identity and source ownership.
 - [ ] The feed is public, versions are immutable and at least one version is installable.
-- [ ] `node scripts/validate-catalog.mjs catalog.yaml` and `node --test` pass locally.
+- [ ] `node .github/scripts/validate-catalog.mjs catalog.yaml` and `node --test` pass locally.
 - [ ] The publisher understands that updates ship through their own feed, not through this directory.

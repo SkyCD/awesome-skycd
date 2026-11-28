@@ -13,15 +13,18 @@ SkyCD plugins are distributed by their publishers as NuGet feeds described by a 
 {% for category in categories | sort(attribute='name', case_sensitive=false) %}
 ## {{ category.name }}
 
+{{ category.description }}
+
 {% for item in category['items'] | sort(attribute='name', case_sensitive=false) -%}
 - [{{ item.name }}]({{ item.project_url }}) - {{ item.description }}
 {% endfor %}
 {% endfor %}
 ## Catalog endpoint
 
-The catalog is published to GitHub Pages on every merged change to `catalog.yaml`:
+Each merged change to `catalog.yaml` is published to GitHub Pages as a formatted page and as the machine-readable catalog:
 
 ```text
+https://skycd.github.io/awesome-skycd/
 https://skycd.github.io/awesome-skycd/plugins.json
 ```
 
@@ -45,9 +48,9 @@ Publishers own their manifests, NuGet feeds and release history. Once a source i
 
 ## Contributing
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) for inclusion criteria, the submission and review process, source moves, removal policy and the contribution checklist. Client behavior, including how a delisted source must be handled, is documented in [docs/APP-INTEGRATION.md](docs/APP-INTEGRATION.md).
+Read [CONTRIBUTING.md](CONTRIBUTING.md) for inclusion criteria, the submission and review process, source moves, removal policy and the contribution checklist. Delisting affects only this list; it never uninstalls anything from a user's machine.
 
-This page is generated from [`catalog.yaml`](catalog.yaml) by [`.github/workflows/render-catalog.yml`](.github/workflows/render-catalog.yml). On merge, that workflow regenerates the list and publishes `plugins.json` to GitHub Pages. Pull-request CI validates the catalog schema and renders both templates without executing plugin code.
+This page is generated from [`catalog.yaml`](catalog.yaml) by [`.github/workflows/render-catalog.yml`](.github/workflows/render-catalog.yml). On merge, that workflow regenerates the list, builds the static page and publishes `plugins.json` to GitHub Pages. Pull-request CI validates the catalog schema, renders both templates and builds the page without executing plugin code.
 
 ## Follow the work
 
