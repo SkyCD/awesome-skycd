@@ -37,5 +37,9 @@
   "https://skycd.github.io/SkyCD.Plugin.Metadata.Sequencer/plugins.json",
   "https://skycd.github.io/SkyCD.Plugin.Metadata.Video/plugins.json",
   "https://skycd.github.io/SkyCD.Plugin.Metadata.VideoProjects/plugins.json",
-  "https://skycd.github.io/SkyCD.Plugin.Metadata.Xmp/plugins.json"
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Xmp/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Audio/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.EBook/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.EComic/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Email/plugins.json"
 ]
