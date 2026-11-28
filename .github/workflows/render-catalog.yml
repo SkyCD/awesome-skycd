@@ -9,9 +9,7 @@ on:
       - .github/scripts/**
       - package.json
       - package-lock.json
-      - README.md
       - .github/workflows/render-catalog.yml
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -29,6 +27,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          ref: main
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -76,7 +76,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
           git commit -m "Render README from catalog.yaml"
-          git push
+          git push origin HEAD:refs/heads/main
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -71,7 +71,7 @@ Each proposed source is reviewed against all of the following. A catalog that pa
 
 4. Open a pull request using the template checklist. Include the publisher, the ownership evidence, the manifest URL, the public project page and the license.
 
-CI rejects a pull request when the YAML is malformed, a field is missing, empty or not a single line, a URL is not an absolute HTTPS URL, two items share a source URL, or two categories share a name. Every category needs a name and a description. CI also renders the templates and validates the generated catalog array.
+CI rejects a pull request when the YAML is malformed, a field is missing, empty or not a single line, a URL is not an absolute HTTPS URL, two items share a source URL, or two categories share a name. Every category needs a name and a description. CI renders the Pages templates and validates the generated catalog array on pull requests and merge groups. README rendering starts after the merge queue lands the changes on main.
 
 CI installs only the pinned YAML parser with lifecycle scripts disabled. It runs no package scripts and never executes plugin code.
 
