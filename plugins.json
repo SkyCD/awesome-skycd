@@ -21,5 +21,18 @@
   "https://skycd.github.io/SkyCD.Plugin.FileFormat.Tellico/plugins.json",
   "https://skycd.github.io/SkyCD.Plugin.FileFormat.Vvv/plugins.json",
   "https://skycd.github.io/SkyCD.Plugin.FileFormat.WhereIsIt/plugins.json",
-  "https://skycd.github.io/SkyCD.Plugin.FileFormat.WinCatalog/plugins.json"
+  "https://skycd.github.io/SkyCD.Plugin.FileFormat.WinCatalog/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Archives/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.DiskImages/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Executable/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.FileMetadata/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Fonts/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.GameDev/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Hash/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Image/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Notebook/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Sequencer/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Video/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.VideoProjects/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Xmp/plugins.json"
 ]
