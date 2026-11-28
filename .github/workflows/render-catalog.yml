@@ -1,0 +1,86 @@
+name: Render catalog
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - catalog.yaml
+      - templates/**
+      - scripts/**
+      - package.json
+      - package-lock.json
+      - README.md
+      - .github/workflows/render-catalog.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install the pinned YAML parser
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Validate catalog.yaml
+        run: node scripts/validate-catalog.mjs catalog.yaml
+      - name: Render README.md
+        uses: cuchi/jinja2-action@v1.3.0
+        with:
+          template: templates/README.md.j2
+          data_file: catalog.yaml
+          data_format: yaml
+          output_file: README.md
+          strict: true
+      - name: Create Pages artifact directory
+        run: mkdir -p .build
+      - name: Render plugins.json
+        uses: cuchi/jinja2-action@v1.3.0
+        with:
+          template: templates/plugins.json.j2
+          data_file: catalog.yaml
+          data_format: yaml
+          output_file: .build/plugins.json
+          strict: true
+      - name: Validate rendered plugins.json
+        run: node scripts/validate-catalog.mjs .build/plugins.json
+      - name: Commit rendered README
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "README.md is already up to date"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Render README from catalog.yaml"
+          git push
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .build
+
+  deploy:
+    needs: render
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

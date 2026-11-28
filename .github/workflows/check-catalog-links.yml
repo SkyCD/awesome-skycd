@@ -21,5 +21,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+      - name: Install the pinned YAML parser
+        run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Probe manifest URLs
-        run: node scripts/check-catalog-links.mjs plugins.json
+        run: node scripts/check-catalog-links.mjs catalog.yaml

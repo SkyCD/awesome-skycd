@@ -4,7 +4,8 @@ This page describes how a SkyCD client consumes the directory. It is the client-
 
 ## Discovery
 
-- The canonical endpoint is `https://raw.githubusercontent.com/SkyCD/awesome-skycd/main/plugins.json`.
+- The canonical endpoint is `https://skycd.github.io/awesome-skycd/plugins.json`.
+- The previous `raw.githubusercontent.com` endpoint is retired. Clients must use the GitHub Pages endpoint.
 - The directory is not a plugin host, package index or update channel. It is a list of manifest URLs.
 - Fetch it anonymously over HTTPS. Do not send credentials, cookies or user data. Do not execute code from the catalog or a manifest while building the browse list.
 
@@ -14,7 +15,7 @@ This page describes how a SkyCD client consumes the directory. It is the client-
 - Apply the same rules as CI before using an entry: absolute HTTPS, no credentials, no fragment, no whitespace. Skip entries that fail instead of rejecting the whole catalog for one bad entry.
 - Fetch manifests only over HTTPS, with a timeout and without credentials. Do not follow redirects that downgrade to HTTP.
 - Cache the response and use conditional requests where the host allows it. If a fetch fails or the payload is invalid, keep the last known good list rather than showing an empty directory.
-- The endpoint is served from the `main` branch, so a commit to that branch is the publication event. There is no release artifact to pin.
+- The endpoint is served from GitHub Pages and is republished when a change to `catalog.yaml` is merged. There is no release artifact to pin.
 
 ## Delisted sources
 

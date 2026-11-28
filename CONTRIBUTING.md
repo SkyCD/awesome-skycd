@@ -1,12 +1,33 @@
 # Contributing to the SkyCD plugin directory
 
-This repository is a URL-only index. A listing is one HTTPS URL pointing at a publisher-owned manifest. The manifest describes package IDs and the NuGet v3 feed as specified by the publishing contract in [issue #2](https://github.com/SkyCD/awesome-skycd/issues/2).
+This repository has one source of truth: [`catalog.yaml`](catalog.yaml). It groups plugins into categories, and every item has a name, a one-line description, a public project URL and a publisher-owned manifest URL.
+
+[`README.md`](README.md) and the published `plugins.json` are generated from that file. Do not edit them by hand; the render workflow overwrites `README.md` on every merge and deploys `plugins.json` to GitHub Pages.
 
 The directory does not host, mirror or review plugin binaries. It does not store package IDs or version history, and it cannot publish an update on a publisher's behalf.
 
+## Catalog format
+
+```yaml
+categories:
+  - name: Metadata plugins
+    items:
+      - name: Example metadata plugin
+        description: Reads example facts from example files during indexing.
+        project_url: https://github.com/example/example-plugin
+        source_url: https://example.github.io/example-plugin/plugins.json
+```
+
+- `name` is the display name shown in the list and in the app.
+- `description` is one sentence on one line, taken from or consistent with the manifest summary.
+- `project_url` is the public project page: a repository, website or documentation page.
+- `source_url` is the publisher-owned manifest URL. It is the value emitted into `plugins.json`.
+
+Use the existing categories where they fit. Propose a new category in the pull request only when no current category is appropriate, and explain why. Order inside a category is not significant; the list is sorted by name when generated.
+
 ## Inclusion criteria
 
-Each proposed source is reviewed against all of the following. A URL that passes CI can still be rejected on review.
+Each proposed source is reviewed against all of the following. A catalog that passes CI can still be rejected on review.
 
 ### Publisher identity
 
@@ -37,32 +58,50 @@ Each proposed source is reviewed against all of the following. A URL that passes
 ## Propose a listing
 
 1. Fork the repository and create a branch.
-2. Add exactly one URL to `plugins.json`, or replace an existing entry when moving a source. The file must remain a JSON array of unique absolute HTTPS URLs. `[]` is valid, and order is not significant.
+2. Add exactly one item to `catalog.yaml` under the best category, or update or remove one existing item. Do not edit `README.md` or `plugins.json`.
 3. Validate locally:
 
    ```bash
-   node scripts/validate-catalog.mjs
+   npm ci --ignore-scripts
+   node scripts/validate-catalog.mjs catalog.yaml
    node --test
    ```
 
 4. Open a pull request using the template checklist. Include the publisher, the ownership evidence, the manifest URL, the public project page and the license.
 
-CI rejects a pull request when the file is not a JSON array, an entry is not a string, a URL is not an absolute HTTPS URL, or two entries resolve to the same URL. CI does not install packages, run package scripts or execute plugin code.
+CI rejects a pull request when the YAML is malformed, an item is missing a field, a field is empty or not a single line, a URL is not an absolute HTTPS URL, two items share a source URL, or two categories share a name. CI also renders both templates and validates the generated catalog array.
+
+CI installs only the pinned YAML parser with lifecycle scripts disabled. It runs no package scripts and never executes plugin code.
 
 Reviewers then verify identity, ownership, provenance and availability. Reviews are metadata-only: a reviewer may open the manifest and feed but must not run publisher code. The pull request receives an approval or the reason for rejection.
+
+## Rendering and publishing
+
+On every merge that changes `catalog.yaml`, templates or the renderer, [`.github/workflows/render-catalog.yml`](.github/workflows/render-catalog.yml):
+
+- renders `README.md` from [`templates/README.md.j2`](templates/README.md.j2) and commits it back to `main`;
+- renders `plugins.json` from [`templates/plugins.json.j2`](templates/plugins.json.j2) and publishes it to GitHub Pages.
+
+The published catalog endpoint is:
+
+```text
+https://skycd.github.io/awesome-skycd/plugins.json
+```
+
+Repository maintainers must enable GitHub Pages with **Source: GitHub Actions** under **Settings → Pages** before the first deployment. Branch protection must also allow the render workflow to push the generated `README.md` commit, for example with a GitHub Actions bypass rule.
 
 ## Updates and source moves
 
 Updates belong to the publisher:
 
 - New versions and changes need no directory change. Publish to your feed and update your manifest; clients see the change on their next fetch.
-- Keep the manifest URL stable. Apps and cached catalogs may hold it for a long time.
-- If the URL must change because of a domain change, a repository rename or a Pages move, open one pull request that replaces the old URL with the new one. Keep the new URL live before the merge, and never reuse the old URL for different content.
-- Update the listing after a repository rename instead of relying on redirects from the old manifest URL.
+- Keep the manifest URL and project URL stable. Apps and cached catalogs may hold them for a long time.
+- If the manifest URL must change because of a domain change, a repository rename or a Pages move, open one pull request that replaces `source_url` with the new one. Keep the new URL live before the merge, and never reuse the old URL for different content.
+- Update `project_url` in the same pull request when the repository or project page moves.
 
 ## Removal and delisting
 
-A maintainer may remove an entry, recording the reason in the pull request that removes it, when:
+A maintainer may remove an item from `catalog.yaml`, recording the reason in the pull request that removes it, when:
 
 - the publisher asks for removal;
 - ownership or control can no longer be verified, for example after an account or domain transfer;
@@ -78,12 +117,15 @@ A removed source can be proposed again once the problem is fixed, with evidence 
 
 ## Contribution checklist
 
-- [ ] `plugins.json` remains a JSON array, and the change is limited to the intended entry.
-- [ ] The URL is absolute, HTTPS, and points directly at the manifest (no credentials, no fragment).
-- [ ] The URL is stable and is not a signed or expiring link.
+- [ ] The change is limited to `catalog.yaml` and touches exactly the intended item.
+- [ ] The item is under an existing category, or the pull request explains the new category.
+- [ ] `source_url` is absolute, HTTPS, points directly at the manifest, and has no credentials, fragment or expiring query.
+- [ ] `source_url` is stable and unique across the catalog.
+- [ ] `project_url` is the public project page and is reachable.
+- [ ] `description` is a single line and describes the plugin accurately.
 - [ ] The manifest is publicly readable without authentication and matches the publishing contract.
 - [ ] Publisher identity and source ownership are explained in the pull request.
 - [ ] Package provenance and the license are linked.
 - [ ] The NuGet v3 feed is public and has at least one installable version.
-- [ ] `node scripts/validate-catalog.mjs` and `node --test` pass locally.
+- [ ] `node scripts/validate-catalog.mjs catalog.yaml` and `node --test` pass locally.
 - [ ] The publisher understands that updates ship through their own feed, not through this directory.

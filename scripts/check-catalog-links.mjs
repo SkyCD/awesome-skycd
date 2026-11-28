@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { appendFileSync, readFileSync } from 'node:fs';
-import { validateCatalogText } from './validate-catalog.mjs';
+import { parse as parseYaml } from 'yaml';
+import { collectSourceUrls, validateCatalogText, validateCatalogYamlText } from './validate-catalog.mjs';
 
 const TIMEOUT_MS = 15_000;
 const CONCURRENCY = 4;
@@ -8,13 +9,16 @@ const getFallbackStatuses = new Set([400, 403, 405, 501]);
 
 function loadUrls(file) {
   const text = readFileSync(file, 'utf8');
-  const { errors } = validateCatalogText(text);
+  const yaml = /\.ya?ml$/i.test(file);
+  const { errors } = yaml ? validateCatalogYamlText(text) : validateCatalogText(text);
   if (errors.length > 0) {
     console.error(`${file} is invalid; fix it before checking links:`);
     for (const error of errors) console.error(`error: ${error}`);
     process.exit(1);
   }
-  return JSON.parse(text.replace(/^\uFEFF/, ''));
+  return yaml
+    ? collectSourceUrls(parseYaml(text.replace(/^\uFEFF/, '')))
+    : JSON.parse(text.replace(/^\uFEFF/, ''));
 }
 
 function fetchWithTimeout(url, init = {}) {
@@ -78,7 +82,7 @@ function writeSummary(results, failed) {
 }
 
 async function main() {
-  const file = process.argv[2] ?? 'plugins.json';
+  const file = process.argv[2] ?? 'catalog.yaml';
   const urls = loadUrls(file);
 
   if (urls.length === 0) {

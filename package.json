@@ -1,0 +1,15 @@
+{
+  "name": "awesome-skycd",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Catalog and generated awesome list for SkyCD plugins",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "validate": "node scripts/validate-catalog.mjs catalog.yaml",
+    "check-links": "node scripts/check-catalog-links.mjs catalog.yaml"
+  },
+  "devDependencies": {
+    "yaml": "^2.9.1"
+  }
+}
