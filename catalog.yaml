@@ -102,6 +102,10 @@ categories:
         description: Reads music projects and tracker files.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Sequencer
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Sequencer/plugins.json
+      - name: Rich Text Format Document Metadata and Preview
+        description: Reads RTF properties and previews the leading text.
+        project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Rtf
+        source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Rtf/plugins.json
       - name: Video Metadata and Poster Frames
         description: Reads video details and poster frames.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Video
