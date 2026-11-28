@@ -52,5 +52,11 @@ jobs:
           strict: true
       - name: Validate rendered plugins.json
         run: node .github/scripts/validate-catalog.mjs .build/plugins.json
-      - name: Build the catalog page
-        run: node .github/scripts/build-site.mjs .build/README.md .build/index.html
+      - name: Render index.html
+        uses: cuchi/jinja2-action@v1.3.0
+        with:
+          template: templates/index.html.j2
+          data_file: catalog.yaml
+          data_format: yaml
+          output_file: .build/index.html
+          strict: true

@@ -7,11 +7,9 @@
   "scripts": {
     "test": "node --test",
     "validate": "node .github/scripts/validate-catalog.mjs catalog.yaml",
-    "build-site": "node .github/scripts/build-site.mjs README.md .build/index.html",
     "check-links": "node .github/scripts/check-catalog-links.mjs catalog.yaml"
   },
   "devDependencies": {
-    "marked": "18.3.0",
     "yaml": "^2.9.1"
   }
 }

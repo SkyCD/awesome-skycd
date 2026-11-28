@@ -71,7 +71,7 @@ Each proposed source is reviewed against all of the following. A catalog that pa
 
 4. Open a pull request using the template checklist. Include the publisher, the ownership evidence, the manifest URL, the public project page and the license.
 
-CI rejects a pull request when the YAML is malformed, a field is missing, empty or not a single line, a URL is not an absolute HTTPS URL, two items share a source URL, or two categories share a name. Every category needs a name and a description. CI also renders both templates, builds the static page and validates the generated catalog array.
+CI rejects a pull request when the YAML is malformed, a field is missing, empty or not a single line, a URL is not an absolute HTTPS URL, two items share a source URL, or two categories share a name. Every category needs a name and a description. CI also renders the templates and validates the generated catalog array.
 
 CI installs only the pinned YAML parser with lifecycle scripts disabled. It runs no package scripts and never executes plugin code.
 
@@ -82,7 +82,7 @@ Reviewers then verify identity, ownership, provenance and availability. Reviews 
 On every merge that changes `catalog.yaml`, templates, scripts or the renderer, [`.github/workflows/render-catalog.yml`](.github/workflows/render-catalog.yml):
 
 - renders `README.md` from [`templates/README.md.j2`](templates/README.md.j2) and commits it back to `main`;
-- renders `plugins.json` from [`templates/plugins.json.j2`](templates/plugins.json.j2), builds an HTML page from the rendered `README.md`, and publishes both to GitHub Pages.
+- renders `plugins.json` from [`templates/plugins.json.j2`](templates/plugins.json.j2), renders the HTML page from [`templates/index.html.j2`](templates/index.html.j2), and publishes both to GitHub Pages.
 
 The published site is:
 
