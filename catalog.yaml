@@ -70,6 +70,10 @@ categories:
         description: Reads notebook details without running code.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Notebook
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Notebook/plugins.json
+      - name: Markdown Document Metadata
+        description: Reads front matter, document structure and text previews.
+        project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Markdown
+        source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Markdown/plugins.json
       - name: Microsoft Office Document Metadata
         description: Reads Office document details.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Office
