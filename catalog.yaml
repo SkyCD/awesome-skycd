@@ -94,6 +94,10 @@ categories:
         description: Computes eD2k, TTH and SHA-256 hashes.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Hash
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Hash/plugins.json
+      - name: Plain Text Previews and Searchable Excerpts
+        description: Indexes text excerpts and shows a preview.
+        project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Text
+        source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Text/plugins.json
       - name: Sequencer Metadata
         description: Reads music projects and tracker files.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Sequencer
