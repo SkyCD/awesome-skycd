@@ -13,14 +13,14 @@ SkyCD plugins are distributed by their publishers as NuGet feeds described by a 
 
 ## Feature plugins
 
-Add user-facing features to the SkyCD desktop app.
+Add extra tools and conveniences, such as a built-in web browser.
 
 - [Web Browser](https://github.com/SkyCD/SkyCD.Plugin.Feature.WebBrowser) - Opens a built-in web browser from the Tools menu.
 
 
 ## File format plugins
 
-Import, open, save, or export third-party catalog, database, and playlist formats.
+Import and export catalogs and playlists in other programs' formats.
 
 - [abeMeda](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.AbeMeda) - Imports abeMeda, XML, and NeoFinder text catalogs.
 - [Basenji](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Basenji) - Imports Basenji volume databases (.vdb).

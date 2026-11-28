@@ -107,7 +107,7 @@ categories:
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Xmp
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Xmp/plugins.json
   - name: File format plugins
-    description: Import, open, save, or export third-party catalog, database, and playlist formats.
+    description: Import and export catalogs and playlists in other programs' formats.
     items:
       - name: abeMeda
         description: Imports abeMeda, XML, and NeoFinder text catalogs.
@@ -202,7 +202,7 @@ categories:
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.WinCatalog
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.WinCatalog/plugins.json
   - name: Feature plugins
-    description: Add user-facing features to the SkyCD desktop app.
+    description: Add extra tools and conveniences, such as a built-in web browser.
     items:
       - name: Web Browser
         description: Opens a built-in web browser from the Tools menu.
