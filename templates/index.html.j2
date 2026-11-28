@@ -61,13 +61,6 @@ h2 { font-size: 1.5rem; margin-top: 2.5rem; padding-bottom: .3rem; border-bottom
 a { color: var(--link); }
 ul { padding-left: 1.5rem; }
 li { margin: .35rem 0; }
-blockquote {
-  margin: 1.5rem 0;
-  padding: .25rem 1rem;
-  border-left: .25rem solid var(--border);
-  color: var(--muted);
-}
-blockquote p { margin: .5rem 0; }
 code {
   background: var(--code);
   padding: .15em .35em;
@@ -88,9 +81,6 @@ footer {
 <body>
 <main>
 <h1 id="awesome-skycd">Awesome SkyCD</h1>
-<blockquote>
-<p>A curated list of community plugin sources for <a href="https://github.com/SkyCD/SkyCD">SkyCD</a>.</p>
-</blockquote>
 <p>SkyCD plugins are distributed by their publishers as NuGet feeds described by a manifest. This list links to publisher-owned manifests; it does not host, mirror or review plugin binaries.</p>
 <h2 id="contents">Contents</h2>
 <ul>
@@ -107,30 +97,16 @@ footer {
 {% endfor -%}
 </ul>
 {% endfor %}
-<h2 id="catalog-endpoint">Catalog endpoint</h2>
-<p>Each merged change to <code>catalog.yaml</code> is published to GitHub Pages as a formatted page and as the machine-readable catalog:</p>
-<pre><code>https://skycd.github.io/awesome-skycd/
-https://skycd.github.io/awesome-skycd/plugins.json
+<h2 id="how-this-list-works">How this list works</h2>
+<p>Every entry links to the publisher who makes the plugin. SkyCD reads that publisher's manifest, shows the plugin in its built-in browser, and installs it from the publisher's own NuGet feed. Nothing is hosted, mirrored or reviewed here, and a listing is not an endorsement of what a plugin does.</p>
+<p>Publishers ship updates through their own feed, not through this list. The list changes only when a plugin is added, moves to a new manifest address, or is removed.</p>
+<h2 id="reading-the-list-from-an-app">Reading the list from an app</h2>
+<p>SkyCD and other clients read the same entries as JSON, published alongside this page:</p>
+<pre><code>https://skycd.github.io/awesome-skycd/plugins.json
 </code></pre>
-<p>The endpoint is public, requires no authentication, and returns a JSON array of unique absolute HTTPS URLs. Each URL points directly at a publisher-owned manifest. The directory stores no package IDs, versions or binaries. An empty array is valid.</p>
-<p>Verify it from a clean client:</p>
-<pre><code>curl -sS https://skycd.github.io/awesome-skycd/plugins.json
-</code></pre>
-<p>Format example only (not a listing):</p>
-<pre><code>[
-  "https://plugins.example.com/skycd/manifest.json"
-]
-</code></pre>
-<p>Publishers own their manifests, NuGet feeds and release history. Once a source is listed, the author ships updates through those resources without changing this directory. The listing changes only when the manifest URL moves or the source is delisted.</p>
+<p>The response is an open, anonymous list of manifest URLs that matches the plugins shown here; an empty list is valid. How a plugin gets listed is described in the <a href="https://github.com/SkyCD/awesome-skycd/blob/main/CONTRIBUTING.md">contribution guide</a>.</p>
 <h2 id="contributing">Contributing</h2>
 <p>Read the <a href="https://github.com/SkyCD/awesome-skycd/blob/main/CONTRIBUTING.md">contribution guide</a> for inclusion criteria, the submission and review process, source moves, removal policy and the contribution checklist. Delisting affects only this list; it never uninstalls anything from a user's machine.</p>
-<p>This page is rendered from <a href="https://github.com/SkyCD/awesome-skycd/blob/main/catalog.yaml">catalog.yaml</a> by <a href="https://github.com/SkyCD/awesome-skycd/blob/main/.github/workflows/render-catalog.yml">.github/workflows/render-catalog.yml</a>. On merge, that workflow regenerates the list, renders this page and publishes <code>plugins.json</code> to GitHub Pages. Pull-request CI validates the catalog schema and renders the templates without executing plugin code.</p>
-<h2 id="follow-the-work">Follow the work</h2>
-<ul>
-<li><a href="https://github.com/SkyCD/SkyCD/issues/801">SkyCD in-app plugin installation</a></li>
-<li><a href="https://github.com/SkyCD/awesome-skycd/issues/1">Directory and contribution rules</a></li>
-<li><a href="https://github.com/SkyCD/awesome-skycd/issues/2">Publisher guide and reference plugin</a></li>
-</ul>
 </main>
 <footer>
 <p>Generated from <a href="https://github.com/SkyCD/awesome-skycd/blob/main/catalog.yaml">catalog.yaml</a>. Machine-readable catalog: <a href="https://skycd.github.io/awesome-skycd/plugins.json">plugins.json</a>.</p>

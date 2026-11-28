@@ -11,17 +11,17 @@ The directory does not host, mirror or review plugin binaries. It does not store
 ```yaml
 categories:
   - name: Metadata plugins
-    description: Read metadata and render previews from catalogued files.
+    description: Surface the details stored inside files, such as tags, titles, durations and dimensions. When a file can be shown, these plugins also draw a preview or thumbnail.
     items:
       - name: Example metadata plugin
-        description: Reads example facts from example files during indexing.
+        description: Reads example facts from example files.
         project_url: https://github.com/example/example-plugin
         source_url: https://example.github.io/example-plugin/plugins.json
 ```
 
-- A category needs `name` (the heading shown on the page) and `description` (one sentence on one line explaining what the category covers).
+- A category needs `name` (the heading shown on the page) and `description` (a short explanation on one line, usually one or two sentences, of what the category covers).
 - `name` is the display name shown in the list and in the app.
-- `description` is one sentence on one line, taken from or consistent with the manifest summary.
+- `description` is one short sentence on one line, taken from or consistent with the manifest summary.
 - `project_url` is the public project page: a repository, website or documentation page.
 - `source_url` is the publisher-owned manifest URL. It is the value emitted into `plugins.json`.
 
