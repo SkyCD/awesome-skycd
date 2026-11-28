@@ -1,8 +1,8 @@
 # Contributing to the SkyCD plugin directory
 
-This repository has one source of truth: [`catalog.yaml`](catalog.yaml). It groups plugins into categories, and every item has a name, a one-line description, a public project URL and a publisher-owned manifest URL.
+This repository has one source of truth: [`catalog.yaml`](catalog.yaml). It groups plugins into categories; every category has a name and a one-line description, and every item has a name, a one-line description, a public project URL and a publisher-owned manifest URL.
 
-[`README.md`](README.md) and the published `plugins.json` are generated from that file. Do not edit them by hand; the render workflow overwrites `README.md` on every merge and deploys `plugins.json` to GitHub Pages.
+[`README.md`](README.md) and the published `plugins.json` are generated from that file. Do not edit them by hand; the render workflow overwrites `README.md` on every merge and deploys the HTML page and `plugins.json` to GitHub Pages.
 
 The directory does not host, mirror or review plugin binaries. It does not store package IDs or version history, and it cannot publish an update on a publisher's behalf.
 
@@ -11,6 +11,7 @@ The directory does not host, mirror or review plugin binaries. It does not store
 ```yaml
 categories:
   - name: Metadata plugins
+    description: Read metadata and render previews from catalogued files.
     items:
       - name: Example metadata plugin
         description: Reads example facts from example files during indexing.
@@ -18,6 +19,7 @@ categories:
         source_url: https://example.github.io/example-plugin/plugins.json
 ```
 
+- A category needs `name` (the heading shown on the page) and `description` (one sentence on one line explaining what the category covers).
 - `name` is the display name shown in the list and in the app.
 - `description` is one sentence on one line, taken from or consistent with the manifest summary.
 - `project_url` is the public project page: a repository, website or documentation page.
@@ -63,13 +65,13 @@ Each proposed source is reviewed against all of the following. A catalog that pa
 
    ```bash
    npm ci --ignore-scripts
-   node scripts/validate-catalog.mjs catalog.yaml
+   node .github/scripts/validate-catalog.mjs catalog.yaml
    node --test
    ```
 
 4. Open a pull request using the template checklist. Include the publisher, the ownership evidence, the manifest URL, the public project page and the license.
 
-CI rejects a pull request when the YAML is malformed, an item is missing a field, a field is empty or not a single line, a URL is not an absolute HTTPS URL, two items share a source URL, or two categories share a name. CI also renders both templates and validates the generated catalog array.
+CI rejects a pull request when the YAML is malformed, a field is missing, empty or not a single line, a URL is not an absolute HTTPS URL, two items share a source URL, or two categories share a name. Every category needs a name and a description. CI also renders the templates and validates the generated catalog array.
 
 CI installs only the pinned YAML parser with lifecycle scripts disabled. It runs no package scripts and never executes plugin code.
 
@@ -77,14 +79,15 @@ Reviewers then verify identity, ownership, provenance and availability. Reviews 
 
 ## Rendering and publishing
 
-On every merge that changes `catalog.yaml`, templates or the renderer, [`.github/workflows/render-catalog.yml`](.github/workflows/render-catalog.yml):
+On every merge that changes `catalog.yaml`, templates, scripts or the renderer, [`.github/workflows/render-catalog.yml`](.github/workflows/render-catalog.yml):
 
 - renders `README.md` from [`templates/README.md.j2`](templates/README.md.j2) and commits it back to `main`;
-- renders `plugins.json` from [`templates/plugins.json.j2`](templates/plugins.json.j2) and publishes it to GitHub Pages.
+- renders `plugins.json` from [`templates/plugins.json.j2`](templates/plugins.json.j2), renders the HTML page from [`templates/index.html.j2`](templates/index.html.j2), and publishes both to GitHub Pages.
 
-The published catalog endpoint is:
+The published site is:
 
 ```text
+https://skycd.github.io/awesome-skycd/
 https://skycd.github.io/awesome-skycd/plugins.json
 ```
 
@@ -111,7 +114,7 @@ A maintainer may remove an item from `catalog.yaml`, recording the reason in the
 
 Where possible the publisher is told first through the pull request or the contact in the listing. Security incidents can be removed immediately without prior notice.
 
-Delisting is a change to this catalog only. It removes the source from browse results and does not uninstall anything from a user's machine. The client contract is documented in [docs/APP-INTEGRATION.md](docs/APP-INTEGRATION.md).
+Delisting is a change to this catalog only. It removes the source from browse results and does not uninstall anything from a user's machine.
 
 A removed source can be proposed again once the problem is fixed, with evidence in a new pull request.
 
@@ -127,5 +130,5 @@ A removed source can be proposed again once the problem is fixed, with evidence 
 - [ ] Publisher identity and source ownership are explained in the pull request.
 - [ ] Package provenance and the license are linked.
 - [ ] The NuGet v3 feed is public and has at least one installable version.
-- [ ] `node scripts/validate-catalog.mjs catalog.yaml` and `node --test` pass locally.
+- [ ] `node .github/scripts/validate-catalog.mjs catalog.yaml` and `node --test` pass locally.
 - [ ] The publisher understands that updates ship through their own feed, not through this directory.

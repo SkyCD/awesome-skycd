@@ -4,179 +4,181 @@
 # See CONTRIBUTING.md for the schema and inclusion rules.
 categories:
   - name: Metadata plugins
+    description: Read metadata and render previews from catalogued files.
     items:
       - name: 3D Model Metadata and Preview
-        description: Extracts structural metadata and renders thumbnails for 3D model files.
+        description: Reads structural metadata and renders thumbnails from 3D model files.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Models3D
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Models3D/plugins.json
       - name: AbiWord Document Metadata and Preview
-        description: Reads bounded document metadata from AbiWord XML and gzip-compressed AbiWord files without loading external resources or requiring AbiWord, and renders a bounded thumbnail of the leading body text.
+        description: Reads document metadata and renders a preview without requiring AbiWord.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.AbiWord
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.AbiWord/plugins.json
       - name: Apple iWork Document Metadata
-        description: Reads format version, producer build, language, identifier and package inventory from modern Apple iWork (Pages, Numbers and Keynote) packages without altering them. No credential is requested, guessed or stored, and a protected package is reported as protected while its plain metadata is still catalogued.
+        description: Reads version, build, language, and inventory from Pages, Numbers, and Keynote packages.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.IWork
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.IWork/plugins.json
       - name: Archive Contents
-        description: Contributes the entries of supported archives as scan work items so metadata providers can inspect them.
+        description: Exposes archive entries as scan work items for metadata providers.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Archives
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Archives/plugins.json
       - name: Audio Tags, Cover Art and Audio CDs
-        description: Extracts normalized audio tags and technical stream facts from MP3, FLAC, Ogg Vorbis and M4A sources, reads embedded cover art as a bounded preview, identifies audio CDs and their tracks during catalog scanning, and optionally retrieves disc and track details from MusicBrainz and GnuDb with cover art under configurable per-disc and per-track options.
+        description: Reads audio tags, cover art, and CD details, with optional MusicBrainz and GnuDb lookups.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Audio
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Audio/plugins.json
       - name: Disk Images
-        description: Contributes the files inside supported disk images as scan work items so metadata providers can inspect them.
+        description: Exposes files inside disk images as scan work items.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.DiskImages
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.DiskImages/plugins.json
       - name: eBook Metadata and Covers
-        description: Reads title, author and publication metadata from epub, ibook, mobi, azw, azw3, prc and fb2 e-books, publishes author tags and preferred names, and extracts a bounded cover image during indexing.
+        description: Reads e-book metadata and extracts covers from epub, mobi, azw, and fb2 files.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.EBook
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.EBook/plugins.json
       - name: eComic Metadata and Covers
-        description: Reads ComicInfo.xml from cbz, cbr and cb7 comic archives, publishes series and title metadata with optional preferred names and writer tags, and extracts a bounded cover image during indexing.
+        description: Reads ComicInfo.xml metadata and extracts covers from cbz, cbr, and cb7 archives.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.EComic
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.EComic/plugins.json
       - name: Email Metadata
-        description: Captures message metadata from EML and MSG files and mailbox metadata from PST stores.
+        description: Reads message metadata from EML and MSG, and mailbox metadata from PST.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Email
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Email/plugins.json
       - name: Executable File Facts and Icons
-        description: Reads PE version information and technical facts from executable files with the in-box PE reader, and extracts the program's own icon as a bounded, index-time PNG preview so the catalog can show it offline. PNG icons are decoded with SkiaSharp; no Windows-only API is used.
+        description: Reads PE version facts and extracts the program icon as an offline preview.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Executable
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Executable/plugins.json
       - name: File Metadata
-        description: Reads the tags, comment and rating a user or a colleague assigned through Windows file properties, Linux extended attributes or macOS Finder properties, so the catalog keeps the metadata that is not stored in the file bytes.
+        description: Reads tags, comments, and ratings from Windows, Linux, and macOS file properties.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.FileMetadata
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.FileMetadata/plugins.json
       - name: Font Metadata and Previews
-        description: Reads font name, version and copyright from ttf, ttc, otf and otc files and renders a bounded preview image with the font's own glyphs.
+        description: Reads font names and renders previews with the font's own glyphs.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Fonts
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Fonts/plugins.json
       - name: Game Engine Project and Asset Metadata
-        description: Reads typed project and asset facts from Godot, Unity, Unreal, Roblox, GameMaker, RPG Maker, Construct 3, Cocos, Defold, CRYENGINE, O3DE, Flax, Stride, Wicked, Ren'Py, s&box, MonoGame/FNA, LÖVE, libGDX atlases, Tiled, LDtk and Aseprite files, with bounded pixel and structure thumbnails. Referenced tilesets, GUID targets and media files are never opened.
+        description: Reads project and asset facts from 20+ game engines and tools, with bounded thumbnails.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.GameDev
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.GameDev/plugins.json
       - name: Image Preview and Metadata
-        description: See image tags, dimensions and previews where supported. TIFF support reads tags, and some document formats depend on an embedded preview.
+        description: Shows image tags, dimensions, and previews for supported formats.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Image
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Image/plugins.json
       - name: Jupyter Notebook Metadata
-        description: Reads notebook format version, kernel language, cell counts and leading cell titles from Jupyter notebooks through the bounded OfficeIMO reader. The source is never executed, stored output payloads are never decoded, and no kernel, widget or remote resource is contacted.
+        description: Reads notebook version, kernel, cell counts, and leading titles without executing code.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Notebook
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Notebook/plugins.json
       - name: Microsoft Office Document Metadata
-        description: Reads title, author, dates and document statistics from Word, Excel, PowerPoint, Visio, OneNote, Access and Project documents without altering them. Password-protected content is never decrypted.
+        description: Reads metadata from Word, Excel, PowerPoint, Visio, OneNote, Access, and Project; never decrypts.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Office
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Office/plugins.json
       - name: Microsoft Works Document Metadata and Preview
-        description: Reads title, author, dates and document statistics from Microsoft Works word processor sources, and publishes an embedded preview or a bounded thumbnail of the document's leading text. The source is never modified, decrypted or opened by path.
+        description: Reads metadata and renders a text preview from Microsoft Works documents.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Works
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Works/plugins.json
       - name: OpenOffice Document Metadata
-        description: Reads document metadata from OpenDocument and legacy OpenOffice.org packages, including text fields, statistics and dates, without altering the source. Protected documents are reported as needing a credential and are never decrypted.
+        description: Reads metadata from OpenDocument and legacy OpenOffice.org packages; never decrypts.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.OpenOffice
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.OpenOffice/plugins.json
       - name: P2P File Hashes
-        description: Streams any file once to compute interoperable eD2k and Tiger Tree Hash identifiers plus a conventional SHA-256 digest.
+        description: Computes eD2k, Tiger Tree Hash, and SHA-256 identifiers in one pass.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Hash
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Hash/plugins.json
       - name: Sequencer Metadata
-        description: Catalogs DAW projects, MIDI files and tracker modules with structure previews.
+        description: Catalogs DAW projects, MIDI files, and tracker modules with structure previews.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Sequencer
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Sequencer/plugins.json
       - name: Video Metadata and Poster Frames
-        description: Reads container metadata from MP4, Matroska, WebM and AVI sources, and renders one bounded poster frame in-process with the bundled OpenCV decoder, falling back to an explicitly configured external decoder when one is available.
+        description: Reads container metadata and renders a poster frame for MP4, Matroska, WebM, and AVI.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Video
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Video/plugins.json
       - name: Video Project Metadata
-        description: "Reads bounded project facts from Adobe Premiere Pro (.prproj), After Effects (.aep, .aepx) and DaVinci Resolve (.drp, .drt) projects: application version, timelines, tracks, clips, frame rate, duration and referenced media counts, without opening the referenced media."
+        description: Reads project facts from Premiere Pro, After Effects, and DaVinci Resolve without opening media.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.VideoProjects
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.VideoProjects/plugins.json
       - name: Volume Serial Number
-        description: Captures the read-only filesystem volume serial number of a disk when it is added to a catalog.
+        description: Captures the filesystem volume serial number when a disk is added.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Volume
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Volume/plugins.json
       - name: WordPerfect Document Metadata and Preview
-        description: Reads the extended document summary from Corel WordPerfect documents, including compound-document storage, and renders a bounded thumbnail of the leading body text, without altering the source. Protected documents are reported as needing a credential and are never decrypted.
+        description: Reads the document summary and renders a text preview; never decrypts protected files.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.WordPerfect
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.WordPerfect/plugins.json
       - name: XMP Sidecar Metadata
-        description: Reads the keywords, description and rating from standalone XMP sidecar files, so a photo's catalog tags travel with the sidecar even when the image formats are read elsewhere.
+        description: Reads keywords, description, and rating from XMP sidecar files.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Xmp
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Xmp/plugins.json
   - name: File format plugins
+    description: Import, open, save, or export third-party catalog, database, and playlist formats.
     items:
       - name: abeMeda
-        description: Import native abeMeda catalogs, XML catalogs, and compatible NeoFinder text exports.
+        description: Imports abeMeda, XML, and NeoFinder text catalogs.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.AbeMeda
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.AbeMeda/plugins.json
       - name: Basenji
-        description: Import Basenji volume databases (.vdb).
+        description: Imports Basenji volume databases (.vdb).
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Basenji
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.Basenji/plugins.json
       - name: Broken X Disk Manager
-        description: Open and save Broken X Disk Manager databases (.bxd).
+        description: Opens and saves Broken X Disk Manager databases (.bxd).
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.BrokenX
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.BrokenX/plugins.json
       - name: Cathy
-        description: Import Cathy disk catalogs (.caf).
+        description: Imports Cathy disk catalogs (.caf).
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Cathy
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.Cathy/plugins.json
       - name: CD Catalog Expert
-        description: Open and save CD Catalog Expert 9.x catalogs (.zdc).
+        description: Opens and saves CD Catalog Expert 9.x catalogs (.zdc).
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.CDCatalogExpert
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.CDCatalogExpert/plugins.json
       - name: CdCat Hyper Catalog
-        description: Read-only import of CdCat .hcf hyper catalog files.
+        description: Imports CdCat hyper catalogs (.hcf) as read-only.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.CDCat
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.CDCat/plugins.json
       - name: CDCollect
-        description: Open CDCollect catalogs made with SQLite 2 or SQLite 3. Save catalogs in the SQLite 3 format.
+        description: Opens SQLite 2/3 catalogs and saves in SQLite 3.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.CDCollect
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.CDCollect/plugins.json
       - name: CDPlayer.ini
-        description: Read-only import of CDPlayer.ini audio CD databases.
+        description: Imports CDPlayer.ini audio CD databases (read-only).
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.CDPlayer
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.CDPlayer/plugins.json
       - name: Disk Explorer Professional
-        description: Import native Disk Explorer Professional catalogs and supported report exports. Save XML reports.
+        description: Imports Disk Explorer Professional catalogs and reports; saves XML reports.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.DiskExplorer
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.DiskExplorer/plugins.json
       - name: DiskBase
-        description: Import DiskBase QDR catalogs.
+        description: Imports DiskBase QDR catalogs.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.DiskBase
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.DiskBase/plugins.json
       - name: DiskCatalogMaker
-        description: Import native v5 catalogs (.dcmf and .dcmd) and text exports from DiskCatalogMaker.
+        description: Imports DiskCatalogMaker v5 catalogs and text exports.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.DiskCatalogMaker
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.DiskCatalogMaker/plugins.json
       - name: Easy Disk Catalog Maker
-        description: Import Easy Disk Catalog Maker 1.7 databases (.edcdb).
+        description: Imports Easy Disk Catalog Maker 1.7 databases (.edcdb).
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.EasyDiskCatalog
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.EasyDiskCatalog/plugins.json
       - name: GCstar
-        description: Import GCstar collection exports.
+        description: Imports GCstar collection exports.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.GCstar
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.GCstar/plugins.json
       - name: Katalog
-        description: Import Katalog Memory-mode CSV/IDX collections and File-mode SQLite collections.
+        description: Imports Katalog CSV/IDX and SQLite collections.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Katalog
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.Katalog/plugins.json
       - name: Librer
-        description: Import Librer disk databases.
+        description: Imports Librer disk databases.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Librer
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.Librer/plugins.json
       - name: MyCatalogue
-        description: Import MyCatalogue Access databases (.mdb).
+        description: Imports MyCatalogue Access databases (.mdb).
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.MyCatalogue
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.MyCatalogue/plugins.json
       - name: Playlists
-        description: Reads and writes M3U, PLS and XSPF playlists as catalogs.
+        description: Reads and writes M3U, PLS, and XSPF playlists.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Playlist
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.Playlist/plugins.json
       - name: Smart CD Catalog PRO
-        description: Import Smart CD Catalog PRO catalogs (.scdc).
+        description: Imports Smart CD Catalog PRO catalogs (.scdc).
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.SmartCDCatalogPro
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.SmartCDCatalogPro/plugins.json
       - name: TAR Archive Index
@@ -184,38 +186,40 @@ categories:
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Tar
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.Tar/plugins.json
       - name: Tellico
-        description: Import Tellico archives (.tc) and XML exports.
+        description: Imports Tellico archives and XML exports.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Tellico
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.Tellico/plugins.json
       - name: Virtual Volumes View
-        description: Import Virtual Volumes View CSV or TSV exports and logical backups (.vvvbk).
+        description: Imports Virtual Volumes View CSV/TSV exports and logical backups.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.Vvv
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.Vvv/plugins.json
       - name: Where Is It?
-        description: Import Where Is It? XML reports.
+        description: Imports Where Is It? XML reports.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.WhereIsIt
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.WhereIsIt/plugins.json
       - name: WinCatalog
-        description: Import native WinCatalog databases and CSV or XML reports.
+        description: Imports WinCatalog databases and CSV/XML reports.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.FileFormat.WinCatalog
         source_url: https://skycd.github.io/SkyCD.Plugin.FileFormat.WinCatalog/plugins.json
   - name: Feature plugins
+    description: Add user-facing features to the SkyCD desktop app.
     items:
       - name: Web Browser
-        description: Opens a built-in web browser window from the Tools menu.
+        description: Opens a built-in web browser from the Tools menu.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Feature.WebBrowser
         source_url: https://skycd.github.io/SkyCD.Plugin.Feature.WebBrowser/plugins.json
   - name: Sample plugins
+    description: Reference plugins that demonstrate the plugin API and UI contracts.
     items:
       - name: Sample Configuration
-        description: Demonstrates an embedded, session-local Options draft page without a UI dependency.
+        description: Demonstrates an embedded, session-local Options draft page.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Sample.Config
         source_url: https://skycd.github.io/SkyCD.Plugin.Sample.Config/plugins.json
       - name: Sample Menu
-        description: Demonstrates a Tools menu command that opens a notification dialog.
+        description: Demonstrates a Tools menu command with a notification dialog.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Sample.Menu
         source_url: https://skycd.github.io/SkyCD.Plugin.Sample.Menu/plugins.json
       - name: Sample Modal
-        description: Demonstrates a blocking confirm-export modal with typed input and output contracts.
+        description: Demonstrates a blocking confirm-export modal with typed contracts.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Sample.Modal
         source_url: https://skycd.github.io/SkyCD.Plugin.Sample.Modal/plugins.json

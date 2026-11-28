@@ -25,4 +25,4 @@ jobs:
       - name: Install the pinned YAML parser
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Probe manifest URLs
-        run: node scripts/check-catalog-links.mjs catalog.yaml
+        run: node .github/scripts/check-catalog-links.mjs catalog.yaml

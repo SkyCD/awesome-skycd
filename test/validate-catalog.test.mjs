@@ -8,7 +8,7 @@ import {
   validateCatalogData,
   validateCatalogText,
   validateCatalogYamlText,
-} from '../scripts/validate-catalog.mjs';
+} from '../.github/scripts/validate-catalog.mjs';
 
 const errorsFor = (value) => validateCatalog(value).errors;
 
@@ -22,7 +22,14 @@ const item = (overrides = {}) => ({
   ...overrides,
 });
 
-const catalog = (categories = [{ name: 'Sample plugins', items: [item()] }]) => ({ categories });
+const category = (overrides = {}) => ({
+  name: 'Sample plugins',
+  description: 'Reference plugins that demonstrate the plugin API.',
+  items: [item()],
+  ...overrides,
+});
+
+const catalog = (categories = [category()]) => ({ categories });
 
 test('accepts an empty catalog', () => {
   assert.deepEqual(errorsFor([]), []);
@@ -129,40 +136,54 @@ test('rejects a missing categories array', () => {
 
 test('rejects a malformed category', () => {
   assert.ok(catalogErrorsFor({ categories: ['Sample plugins'] }).length > 0);
-  assert.ok(catalogErrorsFor({ categories: [{ items: [] }] }).length > 0);
-  assert.ok(catalogErrorsFor({ categories: [{ name: '  Samples', items: [] }] }).length > 0);
-  assert.ok(catalogErrorsFor({ categories: [{ name: 'Samples\nMore', items: [] }] }).length > 0);
-  assert.ok(catalogErrorsFor({ categories: [{ name: 'Samples', items: {} }] }).length > 0);
+  assert.ok(catalogErrorsFor({ categories: [{ description: 'Samples.', items: [] }] }).length > 0);
+  assert.ok(catalogErrorsFor({ categories: [{ name: '  Samples', description: 'Samples.', items: [] }] }).length > 0);
+  assert.ok(catalogErrorsFor({ categories: [{ name: 'Samples\nMore', description: 'Samples.', items: [] }] }).length > 0);
+  assert.ok(catalogErrorsFor({ categories: [{ name: 'Samples', description: 'Samples.', items: {} }] }).length > 0);
+});
+
+test('rejects missing or malformed category descriptions', () => {
+  const base = { name: 'Samples', items: [] };
+  assert.ok(catalogErrorsFor({ categories: [base] }).length > 0, 'missing');
+  for (const description of ['', 42, 'One line\nTwo lines', ' padded ']) {
+    assert.ok(catalogErrorsFor({ categories: [{ ...base, description }] }).length > 0, JSON.stringify(description));
+  }
+  assert.deepEqual(catalogErrorsFor({ categories: [{ ...base, description: 'One line.' }] }), []);
 });
 
 test('rejects duplicate category names ignoring case', () => {
-  const value = { categories: [{ name: 'Samples', items: [] }, { name: 'samples', items: [] }] };
+  const value = {
+    categories: [
+      { name: 'Samples', description: 'First.', items: [] },
+      { name: 'samples', description: 'Second.', items: [] },
+    ],
+  };
   assert.ok(catalogErrorsFor(value).length > 0);
 });
 
 test('rejects a malformed item', () => {
-  assert.ok(catalogErrorsFor(catalog([{ name: 'Samples', items: ['Sample'] }])).length > 0);
+  assert.ok(catalogErrorsFor(catalog([{ name: 'Samples', description: 'Samples.', items: ['Sample'] }])).length > 0);
 });
 
 test('rejects missing or empty item fields', () => {
   for (const field of ['name', 'description', 'project_url', 'source_url']) {
     const missing = item();
     delete missing[field];
-    assert.ok(catalogErrorsFor(catalog([{ name: 'Samples', items: [missing] }])).length > 0, `missing ${field}`);
-    assert.ok(catalogErrorsFor(catalog([{ name: 'Samples', items: [item({ [field]: '' })] }])).length > 0, `empty ${field}`);
-    assert.ok(catalogErrorsFor(catalog([{ name: 'Samples', items: [item({ [field]: 42 })] }])).length > 0, `non-string ${field}`);
+    assert.ok(catalogErrorsFor(catalog([{ name: 'Samples', description: 'Samples.', items: [missing] }])).length > 0, `missing ${field}`);
+    assert.ok(catalogErrorsFor(catalog([{ name: 'Samples', description: 'Samples.', items: [item({ [field]: '' })] }])).length > 0, `empty ${field}`);
+    assert.ok(catalogErrorsFor(catalog([{ name: 'Samples', description: 'Samples.', items: [item({ [field]: 42 })] }])).length > 0, `non-string ${field}`);
   }
 });
 
 test('rejects multiline descriptions', () => {
-  assert.ok(catalogErrorsFor(catalog([{ name: 'Samples', items: [item({ description: 'One line\nTwo lines' })] }])).length > 0);
-  assert.ok(catalogErrorsFor(catalog([{ name: 'Samples', items: [item({ name: 'Padded ' })] }])).length > 0);
+  assert.ok(catalogErrorsFor(catalog([{ name: 'Samples', description: 'Samples.', items: [item({ description: 'One line\nTwo lines' })] }])).length > 0);
+  assert.ok(catalogErrorsFor(catalog([{ name: 'Samples', description: 'Samples.', items: [item({ name: 'Padded ' })] }])).length > 0);
 });
 
 test('rejects invalid project and source urls', () => {
   for (const field of ['project_url', 'source_url']) {
     for (const value of ['http://example.com/x', 'https://', 'https://user:secret@example.com/x', 'https://example.com/x#frag']) {
-      assert.ok(catalogErrorsFor(catalog([{ name: 'Samples', items: [item({ [field]: value })] }])).length > 0, `${field}: ${value}`);
+      assert.ok(catalogErrorsFor(catalog([{ name: 'Samples', description: 'Samples.', items: [item({ [field]: value })] }])).length > 0, `${field}: ${value}`);
     }
   }
 });
@@ -170,8 +191,8 @@ test('rejects invalid project and source urls', () => {
 test('rejects duplicate source urls across categories', () => {
   const value = {
     categories: [
-      { name: 'One', items: [item()] },
-      { name: 'Two', items: [item({ name: 'Another' })] },
+      { name: 'One', description: 'First.', items: [item()] },
+      { name: 'Two', description: 'Second.', items: [item({ name: 'Another' })] },
     ],
   };
   assert.ok(catalogErrorsFor(value).length > 0);
@@ -179,7 +200,7 @@ test('rejects duplicate source urls across categories', () => {
 
 test('warns about query strings in catalog urls', () => {
   const result = validateCatalogData(catalog([
-    { name: 'Samples', items: [item({ source_url: 'https://example.com/plugins.json?version=1' })] },
+    { name: 'Samples', description: 'Samples.', items: [item({ source_url: 'https://example.com/plugins.json?version=1' })] },
   ]));
   assert.deepEqual(result.errors, []);
   assert.equal(result.warnings.length, 1);
@@ -204,8 +225,8 @@ test('ignores a utf-8 bom in yaml', () => {
 test('collects source urls in document order', () => {
   const value = {
     categories: [
-      { name: 'One', items: [item({ source_url: 'https://example.com/a.json' }), item({ name: 'B', source_url: 'https://example.com/b.json' })] },
-      { name: 'Two', items: [item({ name: 'C', source_url: 'https://example.com/c.json' })] },
+      { name: 'One', description: 'First.', items: [item({ source_url: 'https://example.com/a.json' }), item({ name: 'B', source_url: 'https://example.com/b.json' })] },
+      { name: 'Two', description: 'Second.', items: [item({ name: 'C', source_url: 'https://example.com/c.json' })] },
     ],
   };
   assert.deepEqual(collectSourceUrls(value), [

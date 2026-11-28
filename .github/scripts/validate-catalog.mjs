@@ -74,6 +74,7 @@ export function validateCatalogData(value) {
         seenCategories.set(key, categoryIndex);
       }
     }
+    validateSingleLine(category.description, `${at}.description`, errors);
 
     if (!Array.isArray(category['items'])) {
       errors.push(`${at}.items: must be an array`);
