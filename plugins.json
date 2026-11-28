@@ -41,5 +41,14 @@
   "https://skycd.github.io/SkyCD.Plugin.Metadata.Audio/plugins.json",
   "https://skycd.github.io/SkyCD.Plugin.Metadata.EBook/plugins.json",
   "https://skycd.github.io/SkyCD.Plugin.Metadata.EComic/plugins.json",
-  "https://skycd.github.io/SkyCD.Plugin.Metadata.Email/plugins.json"
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Email/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Models3D/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Office/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.OpenOffice/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.WordPerfect/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Works/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.Volume/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.IWork/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.Metadata.AbiWord/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.FileFormat.Playlist/plugins.json"
 ]
