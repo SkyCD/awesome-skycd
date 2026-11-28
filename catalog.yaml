@@ -4,7 +4,7 @@
 # See CONTRIBUTING.md for the schema and inclusion rules.
 categories:
   - name: Metadata plugins
-    description: Read metadata and render previews from catalogued files.
+    description: Show details and previews for the files you catalogue.
     items:
       - name: 3D Model Metadata and Preview
         description: Reads structural metadata and renders thumbnails from 3D model files.

@@ -49,7 +49,7 @@ Import and export catalogs and playlists in other programs' formats.
 
 ## Metadata plugins
 
-Read metadata and render previews from catalogued files.
+Show details and previews for the files you catalogue.
 
 - [3D Model Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Models3D) - Reads structural metadata and renders thumbnails from 3D model files.
 - [AbiWord Document Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.AbiWord) - Reads document metadata and renders a preview without requiring AbiWord.
