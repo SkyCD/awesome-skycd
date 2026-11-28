@@ -78,6 +78,10 @@ categories:
         description: Reads OpenDocument and OpenOffice details.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.OpenOffice
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.OpenOffice/plugins.json
+      - name: PDF Document Metadata and First-Page Previews
+        description: Reads PDF details and renders first-page previews.
+        project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Pdf
+        source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Pdf/plugins.json
       - name: P2P File Hashes
         description: Computes eD2k, TTH and SHA-256 hashes.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Hash
