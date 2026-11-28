@@ -1,5 +1,5 @@
 <!-- Generated from catalog.yaml and templates/README.md.j2. Do not edit by hand. -->
-# Awesome SkyCD [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome SkyCD
 
 > A curated list of community plugin sources for [SkyCD](https://github.com/SkyCD/SkyCD).
 
@@ -7,39 +7,15 @@ SkyCD plugins are distributed by their publishers as NuGet feeds described by a 
 
 ## Contents
 
-- [Metadata plugins](#metadata-plugins)
-- [File format plugins](#file-format-plugins)
 - [Feature plugins](#feature-plugins)
+- [File format plugins](#file-format-plugins)
+- [Metadata plugins](#metadata-plugins)
 - [Sample plugins](#sample-plugins)
 
 
-## Metadata plugins
+## Feature plugins
 
-- [3D Model Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Models3D) - Extracts structural metadata and renders thumbnails for 3D model files.
-- [AbiWord Document Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.AbiWord) - Reads bounded document metadata from AbiWord XML and gzip-compressed AbiWord files without loading external resources or requiring AbiWord, and renders a bounded thumbnail of the leading body text.
-- [Apple iWork Document Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.IWork) - Reads format version, producer build, language, identifier and package inventory from modern Apple iWork (Pages, Numbers and Keynote) packages without altering them. No credential is requested, guessed or stored, and a protected package is reported as protected while its plain metadata is still catalogued.
-- [Archive Contents](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Archives) - Contributes the entries of supported archives as scan work items so metadata providers can inspect them.
-- [Audio Tags, Cover Art and Audio CDs](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Audio) - Extracts normalized audio tags and technical stream facts from MP3, FLAC, Ogg Vorbis and M4A sources, reads embedded cover art as a bounded preview, identifies audio CDs and their tracks during catalog scanning, and optionally retrieves disc and track details from MusicBrainz and GnuDb with cover art under configurable per-disc and per-track options.
-- [Disk Images](https://github.com/SkyCD/SkyCD.Plugin.Metadata.DiskImages) - Contributes the files inside supported disk images as scan work items so metadata providers can inspect them.
-- [eBook Metadata and Covers](https://github.com/SkyCD/SkyCD.Plugin.Metadata.EBook) - Reads title, author and publication metadata from epub, ibook, mobi, azw, azw3, prc and fb2 e-books, publishes author tags and preferred names, and extracts a bounded cover image during indexing.
-- [eComic Metadata and Covers](https://github.com/SkyCD/SkyCD.Plugin.Metadata.EComic) - Reads ComicInfo.xml from cbz, cbr and cb7 comic archives, publishes series and title metadata with optional preferred names and writer tags, and extracts a bounded cover image during indexing.
-- [Email Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Email) - Captures message metadata from EML and MSG files and mailbox metadata from PST stores.
-- [Executable File Facts and Icons](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Executable) - Reads PE version information and technical facts from executable files with the in-box PE reader, and extracts the program's own icon as a bounded, index-time PNG preview so the catalog can show it offline. PNG icons are decoded with SkiaSharp; no Windows-only API is used.
-- [File Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.FileMetadata) - Reads the tags, comment and rating a user or a colleague assigned through Windows file properties, Linux extended attributes or macOS Finder properties, so the catalog keeps the metadata that is not stored in the file bytes.
-- [Font Metadata and Previews](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Fonts) - Reads font name, version and copyright from ttf, ttc, otf and otc files and renders a bounded preview image with the font's own glyphs.
-- [Game Engine Project and Asset Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.GameDev) - Reads typed project and asset facts from Godot, Unity, Unreal, Roblox, GameMaker, RPG Maker, Construct 3, Cocos, Defold, CRYENGINE, O3DE, Flax, Stride, Wicked, Ren'Py, s&box, MonoGame/FNA, LÖVE, libGDX atlases, Tiled, LDtk and Aseprite files, with bounded pixel and structure thumbnails. Referenced tilesets, GUID targets and media files are never opened.
-- [Image Preview and Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Image) - See image tags, dimensions and previews where supported. TIFF support reads tags, and some document formats depend on an embedded preview.
-- [Jupyter Notebook Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Notebook) - Reads notebook format version, kernel language, cell counts and leading cell titles from Jupyter notebooks through the bounded OfficeIMO reader. The source is never executed, stored output payloads are never decoded, and no kernel, widget or remote resource is contacted.
-- [Microsoft Office Document Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Office) - Reads title, author, dates and document statistics from Word, Excel, PowerPoint, Visio, OneNote, Access and Project documents without altering them. Password-protected content is never decrypted.
-- [Microsoft Works Document Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Works) - Reads title, author, dates and document statistics from Microsoft Works word processor sources, and publishes an embedded preview or a bounded thumbnail of the document's leading text. The source is never modified, decrypted or opened by path.
-- [OpenOffice Document Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.OpenOffice) - Reads document metadata from OpenDocument and legacy OpenOffice.org packages, including text fields, statistics and dates, without altering the source. Protected documents are reported as needing a credential and are never decrypted.
-- [P2P File Hashes](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Hash) - Streams any file once to compute interoperable eD2k and Tiger Tree Hash identifiers plus a conventional SHA-256 digest.
-- [Sequencer Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Sequencer) - Catalogs DAW projects, MIDI files and tracker modules with structure previews.
-- [Video Metadata and Poster Frames](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Video) - Reads container metadata from MP4, Matroska, WebM and AVI sources, and renders one bounded poster frame in-process with the bundled OpenCV decoder, falling back to an explicitly configured external decoder when one is available.
-- [Video Project Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.VideoProjects) - Reads bounded project facts from Adobe Premiere Pro (.prproj), After Effects (.aep, .aepx) and DaVinci Resolve (.drp, .drt) projects: application version, timelines, tracks, clips, frame rate, duration and referenced media counts, without opening the referenced media.
-- [Volume Serial Number](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Volume) - Captures the read-only filesystem volume serial number of a disk when it is added to a catalog.
-- [WordPerfect Document Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.WordPerfect) - Reads the extended document summary from Corel WordPerfect documents, including compound-document storage, and renders a bounded thumbnail of the leading body text, without altering the source. Protected documents are reported as needing a credential and are never decrypted.
-- [XMP Sidecar Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Xmp) - Reads the keywords, description and rating from standalone XMP sidecar files, so a photo's catalog tags travel with the sidecar even when the image formats are read elsewhere.
+- [Web Browser](https://github.com/SkyCD/SkyCD.Plugin.Feature.WebBrowser) - Opens a built-in web browser window from the Tools menu.
 
 
 ## File format plugins
@@ -69,9 +45,33 @@ SkyCD plugins are distributed by their publishers as NuGet feeds described by a 
 - [WinCatalog](https://github.com/SkyCD/SkyCD.Plugin.FileFormat.WinCatalog) - Import native WinCatalog databases and CSV or XML reports.
 
 
-## Feature plugins
+## Metadata plugins
 
-- [Web Browser](https://github.com/SkyCD/SkyCD.Plugin.Feature.WebBrowser) - Opens a built-in web browser window from the Tools menu.
+- [3D Model Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Models3D) - Extracts structural metadata and renders thumbnails for 3D model files.
+- [AbiWord Document Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.AbiWord) - Reads bounded document metadata from AbiWord XML and gzip-compressed AbiWord files without loading external resources or requiring AbiWord, and renders a bounded thumbnail of the leading body text.
+- [Apple iWork Document Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.IWork) - Reads format version, producer build, language, identifier and package inventory from modern Apple iWork (Pages, Numbers and Keynote) packages without altering them. No credential is requested, guessed or stored, and a protected package is reported as protected while its plain metadata is still catalogued.
+- [Archive Contents](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Archives) - Contributes the entries of supported archives as scan work items so metadata providers can inspect them.
+- [Audio Tags, Cover Art and Audio CDs](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Audio) - Extracts normalized audio tags and technical stream facts from MP3, FLAC, Ogg Vorbis and M4A sources, reads embedded cover art as a bounded preview, identifies audio CDs and their tracks during catalog scanning, and optionally retrieves disc and track details from MusicBrainz and GnuDb with cover art under configurable per-disc and per-track options.
+- [Disk Images](https://github.com/SkyCD/SkyCD.Plugin.Metadata.DiskImages) - Contributes the files inside supported disk images as scan work items so metadata providers can inspect them.
+- [eBook Metadata and Covers](https://github.com/SkyCD/SkyCD.Plugin.Metadata.EBook) - Reads title, author and publication metadata from epub, ibook, mobi, azw, azw3, prc and fb2 e-books, publishes author tags and preferred names, and extracts a bounded cover image during indexing.
+- [eComic Metadata and Covers](https://github.com/SkyCD/SkyCD.Plugin.Metadata.EComic) - Reads ComicInfo.xml from cbz, cbr and cb7 comic archives, publishes series and title metadata with optional preferred names and writer tags, and extracts a bounded cover image during indexing.
+- [Email Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Email) - Captures message metadata from EML and MSG files and mailbox metadata from PST stores.
+- [Executable File Facts and Icons](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Executable) - Reads PE version information and technical facts from executable files with the in-box PE reader, and extracts the program's own icon as a bounded, index-time PNG preview so the catalog can show it offline. PNG icons are decoded with SkiaSharp; no Windows-only API is used.
+- [File Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.FileMetadata) - Reads the tags, comment and rating a user or a colleague assigned through Windows file properties, Linux extended attributes or macOS Finder properties, so the catalog keeps the metadata that is not stored in the file bytes.
+- [Font Metadata and Previews](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Fonts) - Reads font name, version and copyright from ttf, ttc, otf and otc files and renders a bounded preview image with the font's own glyphs.
+- [Game Engine Project and Asset Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.GameDev) - Reads typed project and asset facts from Godot, Unity, Unreal, Roblox, GameMaker, RPG Maker, Construct 3, Cocos, Defold, CRYENGINE, O3DE, Flax, Stride, Wicked, Ren'Py, s&box, MonoGame/FNA, LÖVE, libGDX atlases, Tiled, LDtk and Aseprite files, with bounded pixel and structure thumbnails. Referenced tilesets, GUID targets and media files are never opened.
+- [Image Preview and Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Image) - See image tags, dimensions and previews where supported. TIFF support reads tags, and some document formats depend on an embedded preview.
+- [Jupyter Notebook Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Notebook) - Reads notebook format version, kernel language, cell counts and leading cell titles from Jupyter notebooks through the bounded OfficeIMO reader. The source is never executed, stored output payloads are never decoded, and no kernel, widget or remote resource is contacted.
+- [Microsoft Office Document Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Office) - Reads title, author, dates and document statistics from Word, Excel, PowerPoint, Visio, OneNote, Access and Project documents without altering them. Password-protected content is never decrypted.
+- [Microsoft Works Document Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Works) - Reads title, author, dates and document statistics from Microsoft Works word processor sources, and publishes an embedded preview or a bounded thumbnail of the document's leading text. The source is never modified, decrypted or opened by path.
+- [OpenOffice Document Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.OpenOffice) - Reads document metadata from OpenDocument and legacy OpenOffice.org packages, including text fields, statistics and dates, without altering the source. Protected documents are reported as needing a credential and are never decrypted.
+- [P2P File Hashes](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Hash) - Streams any file once to compute interoperable eD2k and Tiger Tree Hash identifiers plus a conventional SHA-256 digest.
+- [Sequencer Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Sequencer) - Catalogs DAW projects, MIDI files and tracker modules with structure previews.
+- [Video Metadata and Poster Frames](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Video) - Reads container metadata from MP4, Matroska, WebM and AVI sources, and renders one bounded poster frame in-process with the bundled OpenCV decoder, falling back to an explicitly configured external decoder when one is available.
+- [Video Project Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.VideoProjects) - Reads bounded project facts from Adobe Premiere Pro (.prproj), After Effects (.aep, .aepx) and DaVinci Resolve (.drp, .drt) projects: application version, timelines, tracks, clips, frame rate, duration and referenced media counts, without opening the referenced media.
+- [Volume Serial Number](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Volume) - Captures the read-only filesystem volume serial number of a disk when it is added to a catalog.
+- [WordPerfect Document Metadata and Preview](https://github.com/SkyCD/SkyCD.Plugin.Metadata.WordPerfect) - Reads the extended document summary from Corel WordPerfect documents, including compound-document storage, and renders a bounded thumbnail of the leading body text, without altering the source. Protected documents are reported as needing a credential and are never decrypted.
+- [XMP Sidecar Metadata](https://github.com/SkyCD/SkyCD.Plugin.Metadata.Xmp) - Reads the keywords, description and rating from standalone XMP sidecar files, so a photo's catalog tags travel with the sidecar even when the image formats are read elsewhere.
 
 
 ## Sample plugins

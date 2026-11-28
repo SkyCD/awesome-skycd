@@ -1,5 +1,5 @@
 <!-- Generated from catalog.yaml and templates/README.md.j2. Do not edit by hand. -->
-# Awesome SkyCD [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome SkyCD
 
 > A curated list of community plugin sources for [SkyCD](https://github.com/SkyCD/SkyCD).
 
@@ -7,13 +7,13 @@ SkyCD plugins are distributed by their publishers as NuGet feeds described by a 
 
 ## Contents
 
-{% for category in categories -%}
+{% for category in categories | sort(attribute='name', case_sensitive=false) -%}
 - [{{ category.name }}](#{{ category.name | lower | replace(' ', '-') }})
 {% endfor %}
-{% for category in categories %}
+{% for category in categories | sort(attribute='name', case_sensitive=false) %}
 ## {{ category.name }}
 
-{% for item in category['items'] -%}
+{% for item in category['items'] | sort(attribute='name', case_sensitive=false) -%}
 - [{{ item.name }}]({{ item.project_url }}) - {{ item.description }}
 {% endfor %}
 {% endfor %}
