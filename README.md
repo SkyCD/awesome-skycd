@@ -1,8 +1,6 @@
 <!-- Generated from catalog.yaml and templates/README.md.j2. Do not edit by hand. -->
 # Awesome SkyCD
 
-> A curated list of community plugin sources for [SkyCD](https://github.com/SkyCD/SkyCD).
-
 SkyCD plugins are distributed by their publishers as NuGet feeds described by a manifest. This list links to publisher-owned manifests; it does not host, mirror or review plugin binaries.
 
 ## Contents
