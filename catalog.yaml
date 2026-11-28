@@ -15,59 +15,59 @@ categories:
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.AbiWord
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.AbiWord/plugins.json
       - name: Apple iWork Document Metadata
-        description: Reads version, build, language, and inventory from Pages, Numbers, and Keynote packages.
+        description: Reads metadata from Pages, Numbers, and Keynote documents.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.IWork
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.IWork/plugins.json
       - name: Archive Contents
-        description: Exposes archive entries as scan work items for metadata providers.
+        description: Lists archive contents for metadata scanning.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Archives
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Archives/plugins.json
       - name: Audio Tags, Cover Art and Audio CDs
-        description: Reads audio tags, cover art, and CD details, with optional MusicBrainz and GnuDb lookups.
+        description: Reads audio tags, cover art, and CD details.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Audio
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Audio/plugins.json
       - name: Disk Images
-        description: Exposes files inside disk images as scan work items.
+        description: Lists files inside disk images for scanning.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.DiskImages
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.DiskImages/plugins.json
       - name: eBook Metadata and Covers
-        description: Reads e-book metadata and extracts covers from epub, mobi, azw, and fb2 files.
+        description: Reads e-book metadata and extracts covers.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.EBook
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.EBook/plugins.json
       - name: eComic Metadata and Covers
-        description: Reads ComicInfo.xml metadata and extracts covers from cbz, cbr, and cb7 archives.
+        description: Reads comic metadata and extracts covers.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.EComic
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.EComic/plugins.json
       - name: Email Metadata
-        description: Reads message metadata from EML and MSG, and mailbox metadata from PST.
+        description: Reads email and mailbox metadata.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Email
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Email/plugins.json
       - name: Executable File Facts and Icons
-        description: Reads PE version facts and extracts the program icon as an offline preview.
+        description: Reads executable version details and extracts the program icon.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Executable
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Executable/plugins.json
       - name: File Metadata
-        description: Reads tags, comments, and ratings from Windows, Linux, and macOS file properties.
+        description: Reads tags, comments, and ratings from file properties.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.FileMetadata
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.FileMetadata/plugins.json
       - name: Font Metadata and Previews
-        description: Reads font names and renders previews with the font's own glyphs.
+        description: Reads font names and renders font previews.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Fonts
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Fonts/plugins.json
       - name: Game Engine Project and Asset Metadata
-        description: Reads project and asset facts from 20+ game engines and tools, with bounded thumbnails.
+        description: Reads project and asset metadata from game engines and tools.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.GameDev
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.GameDev/plugins.json
       - name: Image Preview and Metadata
-        description: Shows image tags, dimensions, and previews for supported formats.
+        description: Shows image tags, dimensions, and previews.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Image
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Image/plugins.json
       - name: Jupyter Notebook Metadata
-        description: Reads notebook version, kernel, cell counts, and leading titles without executing code.
+        description: Reads notebook metadata and titles without executing code.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Notebook
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Notebook/plugins.json
       - name: Microsoft Office Document Metadata
-        description: Reads metadata from Word, Excel, PowerPoint, Visio, OneNote, Access, and Project; never decrypts.
+        description: Reads metadata from Microsoft Office documents without decrypting them.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Office
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Office/plugins.json
       - name: Microsoft Works Document Metadata and Preview
@@ -75,23 +75,23 @@ categories:
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Works
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Works/plugins.json
       - name: OpenOffice Document Metadata
-        description: Reads metadata from OpenDocument and legacy OpenOffice.org packages; never decrypts.
+        description: Reads metadata from OpenDocument and OpenOffice documents without decrypting them.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.OpenOffice
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.OpenOffice/plugins.json
       - name: P2P File Hashes
-        description: Computes eD2k, Tiger Tree Hash, and SHA-256 identifiers in one pass.
+        description: Computes eD2k, Tiger Tree Hash, and SHA-256 hashes.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Hash
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Hash/plugins.json
       - name: Sequencer Metadata
-        description: Catalogs DAW projects, MIDI files, and tracker modules with structure previews.
+        description: Catalogs DAW projects, MIDI files, and tracker modules.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Sequencer
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Sequencer/plugins.json
       - name: Video Metadata and Poster Frames
-        description: Reads container metadata and renders a poster frame for MP4, Matroska, WebM, and AVI.
+        description: Reads video metadata and renders a poster frame.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Video
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Video/plugins.json
       - name: Video Project Metadata
-        description: Reads project facts from Premiere Pro, After Effects, and DaVinci Resolve without opening media.
+        description: Reads project metadata from Premiere Pro, After Effects, and DaVinci Resolve.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.VideoProjects
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.VideoProjects/plugins.json
       - name: Volume Serial Number
@@ -99,7 +99,7 @@ categories:
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.Volume
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.Volume/plugins.json
       - name: WordPerfect Document Metadata and Preview
-        description: Reads the document summary and renders a text preview; never decrypts protected files.
+        description: Reads document metadata and renders a text preview without decrypting files.
         project_url: https://github.com/SkyCD/SkyCD.Plugin.Metadata.WordPerfect
         source_url: https://skycd.github.io/SkyCD.Plugin.Metadata.WordPerfect/plugins.json
       - name: XMP Sidecar Metadata
