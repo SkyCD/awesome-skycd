@@ -21,5 +21,8 @@
   "https://skycd.github.io/SkyCD.Plugin.FileFormat.Tellico/plugins.json",
   "https://skycd.github.io/SkyCD.Plugin.FileFormat.Vvv/plugins.json",
   "https://skycd.github.io/SkyCD.Plugin.FileFormat.WhereIsIt/plugins.json",
-  "https://skycd.github.io/SkyCD.Plugin.FileFormat.WinCatalog/plugins.json"
+  "https://skycd.github.io/SkyCD.Plugin.FileFormat.WinCatalog/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.FileFormat.CDCat/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.FileFormat.CDPlayer/plugins.json",
+  "https://skycd.github.io/SkyCD.Plugin.FileFormat.Tar/plugins.json"
 ]
