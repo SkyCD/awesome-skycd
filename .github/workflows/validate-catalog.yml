@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   pull_request:
+  merge_group:
+    types: [checks_requested]
 
 permissions:
   contents: read
@@ -34,14 +36,6 @@ jobs:
         run: node .github/scripts/validate-catalog.mjs catalog.yaml
       - name: Create render output directory
         run: mkdir -p .build
-      - name: Render README.md
-        uses: cuchi/jinja2-action@v1.3.0
-        with:
-          template: templates/README.md.j2
-          data_file: catalog.yaml
-          data_format: yaml
-          output_file: .build/README.md
-          strict: true
       - name: Render plugins.json
         uses: cuchi/jinja2-action@v1.3.0
         with:
