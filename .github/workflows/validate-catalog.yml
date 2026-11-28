@@ -15,7 +15,7 @@ concurrency:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -25,7 +25,30 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+      - name: Install the pinned YAML parser
+        run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Test the catalog validator
         run: node --test
-      - name: Validate plugins.json
-        run: node scripts/validate-catalog.mjs plugins.json
+      - name: Validate catalog.yaml
+        run: node scripts/validate-catalog.mjs catalog.yaml
+      - name: Create render output directory
+        run: mkdir -p .build
+      - name: Render README.md
+        uses: cuchi/jinja2-action@v1.3.0
+        with:
+          template: templates/README.md.j2
+          data_file: catalog.yaml
+          data_format: yaml
+          output_file: .build/README.md
+          strict: true
+      - name: Render plugins.json
+        uses: cuchi/jinja2-action@v1.3.0
+        with:
+          template: templates/plugins.json.j2
+          data_file: catalog.yaml
+          data_format: yaml
+          output_file: .build/plugins.json
+          strict: true
+      - name: Validate rendered plugins.json
+        run: node scripts/validate-catalog.mjs .build/plugins.json

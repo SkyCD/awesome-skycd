@@ -1,0 +1,7 @@
+{%- set ns = namespace(sources=[]) -%}
+{%- for category in categories -%}
+{%- for item in category['items'] -%}
+{%- set ns.sources = ns.sources + [item.source_url] -%}
+{%- endfor -%}
+{%- endfor -%}
+{{ ns.sources | tojson }}
